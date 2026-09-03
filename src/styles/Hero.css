@@ -1,0 +1,210 @@
+/* Hero section */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: #ffffff;
+}
+
+/* Efecto veteado animado tipo lámpara de lava */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  /* Margen extra amplio para que no se corten los bordes al moverse y rotar */
+  inset: -30%;
+
+  background:
+    /* Veta superior izquierda */
+    radial-gradient(
+      ellipse 45% 28% at 10% 15%,
+      rgba(54, 84, 14, 0.65) 0%,
+      rgba(54, 84, 14, 0.40) 30%,
+      rgba(54, 84, 14, 0.18) 55%,
+      transparent 75%
+    ),
+
+    /* Veta superior derecha */
+    radial-gradient(
+      ellipse 55% 32% at 80% 10%,
+      rgba(54, 84, 14, 0.60) 0%,
+      rgba(54, 84, 14, 0.35) 35%,
+      rgba(54, 84, 14, 0.12) 60%,
+      transparent 78%
+    ),
+
+    /* Veta central */
+    radial-gradient(
+      ellipse 65% 30% at 40% 45%,
+      rgba(54, 84, 14, 0.55) 0%,
+      rgba(54, 84, 14, 0.30) 35%,
+      rgba(54, 84, 14, 0.12) 60%,
+      transparent 78%
+    ),
+
+    /* Veta inferior derecha */
+    radial-gradient(
+      ellipse 55% 35% at 90% 70%,
+      rgba(54, 84, 14, 0.62) 0%,
+      rgba(54, 84, 14, 0.35) 35%,
+      rgba(54, 84, 14, 0.14) 60%,
+      transparent 80%
+    ),
+
+    /* Veta inferior izquierda */
+    radial-gradient(
+      ellipse 60% 30% at 10% 90%,
+      rgba(54, 84, 14, 0.58) 0%,
+      rgba(54, 84, 14, 0.30) 35%,
+      rgba(54, 84, 14, 0.12) 60%,
+      transparent 80%
+    ),
+
+    /* Luz blanca central */
+    radial-gradient(
+      ellipse 55% 40% at 50% 50%,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(245, 252, 247, 0.45) 45%,
+      transparent 75%
+    );
+
+  filter: blur(70px);
+  pointer-events: none;
+
+  /* Aplica la animación continua */
+  animation: lavaLamp 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Movimiento orgánico multilinea */
+@keyframes lavaLamp {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(3%, -5%) scale(1.12, 0.92) rotate(4deg);
+  }
+  50% {
+    transform: translate(-4%, 4%) scale(0.9, 1.15) rotate(-6deg);
+  }
+  75% {
+    transform: translate(5%, -2%) scale(1.08, 0.95) rotate(3deg);
+  }
+  100% {
+    transform: translate(-3%, 3%) scale(0.95, 1.05) rotate(-4deg);
+  }
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/**/
+
+.hero-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-header {
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 0.8;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* Estilos de Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #1e293b;
+  border: 1px solid #1e293b;
+}
+
+.btn-secondary:hover {
+  border: 1px solid #1e293b90;
+}
+
+/* Media queries */
+/* Tablets en adelante (>= 640px) */
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+  }
+}
+
+/* Escritorio / Pantallas Grandes (>= 1024px) */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+}

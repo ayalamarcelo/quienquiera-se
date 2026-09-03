@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Goudy+Bookletter+1911&display=swap');
+
+/* Header global */
+.navbar-header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 1200px;
+  z-index: 1000;
+  /* border-radius: 10px; */
+  /* background-color: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(0px); */
+  /* border: 1px solid transparent; */
+  box-shadow: none;
+
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.navbar-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.166);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.108);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor principal */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Menú Desktop */
+.navbar-menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: #152130;
+  text-decoration: none;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.navbar-link:hover {
+  color: #36540e;
+  transition: color weight 0.2s ease-in-out;
+}
+
+/* Botón Hamburguesa */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  padding: 0;
+}
+
+/* Menú Móvil */
+.navbar-menu-mobile {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-link-mobile {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.navbar-link-mobile:hover {
+  background-color: #f3f4f6;
+  color: #2563eb;
+}
+
+.logo-qq {
+  max-width: 3rem;
+}
+
+/* Reglas Responsive */
+@media (max-width: 768px) {
+  .navbar-menu-desktop {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu-mobile {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+  }
+}

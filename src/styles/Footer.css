@@ -1,0 +1,93 @@
+/* Estilos generales */
+.footer {
+  background-color: #050810;
+  color: #44474d;
+  padding: 3rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Sección del Logo */
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+.footer-logo p {
+  color: #44474d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Sección de Contacto */
+.footer-contact {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact p {
+  color: #44474d;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-contact p {
+  margin: 0;
+  color: #44474d;
+  font-size: 0.9rem;
+}
+
+.footer-contact a {
+  color: #44474d;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.footer-contact a:hover {
+  opacity: 0.8;
+}
+
+/* Sección (Copyright) */
+.footer-bottom {
+  width: 100%;
+  max-width: 600px;
+  border-top: 1px solid #1e293b;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-bottom small {
+  color: #44474d;
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social a {
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+  opacity: 0.7;
+}
