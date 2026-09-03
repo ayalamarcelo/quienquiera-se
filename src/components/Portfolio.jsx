@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Blog.css';
+import '../styles/Portfolio.css';
 
 const POSTS_DATA = [
   {
@@ -42,7 +42,7 @@ const POSTS_DATA = [
 
 const CATEGORIES = ["Todos", "Proceso Editorial", "Aspectos Legales", "Marketing Editorial", "Casos de Éxito"];
 
-export default function Blog() {
+export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [searchQuery, setSearchQuery] = useState("");
 

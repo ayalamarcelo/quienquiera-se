@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import TextReveal from './TextReveal';
 import '../styles/Navbar.css';
 
-export default function Navbar()  {
-
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -37,21 +31,21 @@ export default function Navbar()  {
         
         {/* Logo */}
         <a href="#home" className="navbar-logo">
-          <img className="logo-qq" src="src/assets/logo/logo-dark-theme.png" alt="Logo-Quien-Quiera" />
+          <img className="logo-qq" src="src/assets/logo/logo-dark-theme.png" alt="logo-qq" />
         </a>
 
-        {/* Menú Desktop */}
+        {/* Menú Desktop con motion Text Reveal */}
         <ul className="navbar-menu-desktop">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="navbar-link">
+              <TextReveal href={link.href} className="navbar-link">
                 {link.name}
-              </a>
+              </TextReveal>
             </li>
           ))}
         </ul>
 
-        {/* Botón Hamburguesa (Móvil) */}
+        {/* Botón Hamburguesa */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
@@ -67,13 +61,13 @@ export default function Navbar()  {
           <ul className="navbar-menu-mobile">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
+                <TextReveal
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="navbar-link-mobile"
                 >
                   {link.name}
-                </a>
+                </TextReveal>
               </li>
             ))}
           </ul>
@@ -82,4 +76,4 @@ export default function Navbar()  {
       </nav>
     </header>
   );
-};
+}

@@ -64,10 +64,10 @@
   transition: color 0.2s ease;
 }
 
-.navbar-link:hover {
+/* .navbar-link:hover {
   color: #36540e;
   transition: color weight 0.2s ease-in-out;
-}
+} */
 
 /* Botón Hamburguesa */
 .navbar-toggle {
@@ -105,6 +105,42 @@
 
 .logo-qq {
   max-width: 3rem;
+}
+
+/*Text Reveal Precision Styling*/
+
+/* Padre del enlace */
+.text-reveal-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* Envoltorio que limita la altura */
+.text-reveal-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Estilo individual de cada línea de texto */
+.text-reveal-item {
+  display: block;
+  line-height: 1.2;
+  padding: 2px 0; /* Espaciado de seguridad para letras descendentes como p, g, y */
+}
+
+/* El clon se posiciona encima en la misma coordenada top/left */
+.text-reveal-clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Reglas Responsive */

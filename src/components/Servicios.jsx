@@ -4,33 +4,28 @@ import '../styles/Servicios.css';
 const serviciosData = [
   {
     id: 1,
-    titulo: 'Diseño Web UI/UX',
-    descripcion: 'Creación de interfaces atractivas, intuitivas y enfocadas en la experiencia del usuario.',
-    precio: '$299 / proyecto',
+    titulo: 'Corrección de Estilo',
+    descripcion: 'Pulido de fluidez, coherencia, tono y riqueza léxica para enriquecer la lectura sin perder la voz del autor.',
   },
   {
     id: 2,
-    titulo: 'Desarrollo Frontend',
-    descripcion: 'Construcción de aplicaciones web modernas, rápidas y optimizadas con React.',
-    precio: '$499 / proyecto',
+    titulo: 'Corrección Ortotipográfica',
+    descripcion: 'Revisión exhaustiva de ortografía, gramática, puntuación y normas tipográficas aplicadas a la maquetación.',
   },
   {
     id: 3,
-    titulo: 'Optimización SEO',
-    descripcion: 'Mejora el posicionamiento de tu sitio en motores de búsqueda para atraer más clientes.',
-    precio: '$199 / mes',
+    titulo: 'Informe de Lectura Editorial',
+    descripcion: 'Análisis crítico de estructura narrativa, ritmo, desarrollo de personajes y viabilidad comercial del manuscrito.',
   },
   {
     id: 4,
-    titulo: 'Mantenimiento Web',
-    descripcion: 'Soporte técnico, actualizaciones de seguridad y respaldos periódicos de tu sitio.',
-    precio: '$99 / mes',
+    titulo: 'Edición y Desarrollo de Manuscritos',
+    descripcion: 'Acompañamiento estructural paso a paso para dar forma al borrador antes del proceso de diagramación.',
   },
   {
     id: 5,
-    titulo: 'Consultoría Digital',
-    descripcion: 'Asesoría personalizada para impulsar y digitalizar tu modelo de negocio.',
-    precio: '$150 / hora',
+    titulo: 'Corrección de Pruebas (Proofreading)',
+    descripcion: 'Última revisión sobre galeradas maquetadas para eliminar erratas, viudas, huérfanas y fallos de maquetación.',
   },
 ];
 
@@ -38,48 +33,37 @@ export default function Servicios() {
   return (
     <section className="servicios-container">
       <header className="servicios-header">
-        <p className="servicios-subtitulo">Lo que ofrecemos</p>
+        <p className="servicios-subtitulo">Servicios Editoriales</p>
 
         <h1 className="servicios-titulo">
-          Nuestros Servicios Profesionales
+          Nuestros <em>servicios</em>
         </h1>
 
         <p className="servicios-descripcion">
-          Diseñamos y desarrollamos soluciones digitales a la medida para hacer crecer tu presencia en línea con la mejor calidad del mercado.
+          Acompañamos a autores y editoriales en cada etapa del texto para garantizar obras impecables, coherentes y listas para publicación.
         </p>
       </header>
 
-      <ul className="servicios-grid">
+      <ul className="servicios-lista">
         {serviciosData.map((servicio) => (
           <li key={servicio.id} className="servicios-item">
-            <article className="servicio-card">
-              <header className="servicio-card-header">
+            <article className="servicio-card-lineal">
+              <div className="servicio-info">
                 <h2 className="servicio-card-titulo">
                   {servicio.titulo}
                 </h2>
-                <p className="servicio-card-texto">
+                <p className="servicio-card-descripcion">
                   {servicio.descripcion}
                 </p>
-              </header>
-              <span className="servicio-card-precio">
-                {servicio.precio}
-              </span>
+              </div>
+
+              <a href={`#servicio-${servicio.id}`} className="servicio-card-link">
+                Leer más &rarr;
+              </a>
             </article>
           </li>
         ))}
       </ul>
-
-      <footer className="servicios-footer">
-        <p className="servicios-footer-texto">
-          ¿Listo para llevar tu proyecto al siguiente nivel con nosotros?
-        </p>
-
-        <hr className="servicios-linea" />
-
-        <button type="button" className="servicios-boton">
-          Contratar servicio
-        </button>
-      </footer>
     </section>
   );
 }
