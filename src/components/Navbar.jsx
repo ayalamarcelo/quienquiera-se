@@ -31,7 +31,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <a href="#home" className="navbar-logo">
-          <img className="logo-qq" src="src/assets/logo/logo-dark-theme.png" alt="logo-qq" />
+          <img className="logo-qq" src="src/assets/images/logo-dark-theme.png" alt="logo-qq" />
         </a>
 
         {/* Menú Desktop con motion Text Reveal */}

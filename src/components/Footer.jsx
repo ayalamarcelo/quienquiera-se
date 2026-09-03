@@ -5,12 +5,12 @@ export default function Footer() {
   return (
     <footer className="footer">
       <section className="footer-logo">
-        <img src="src/assets/logo/logo-dark-theme.png" alt="logo" />
+        <img src="src/assets/images/logo-dark-theme.png" alt="logo" />
       </section>
 
       <address className="footer-contact">
         <p>Corrección y edición profesional en español</p>
-        <p><a href="mailto:hola@email.com">servicioeditorial@quienquiera.com</a></p>
+        <p><a href="mailto:hola@email.com">hola@quienquiera.com</a></p>
       </address>
 
       <div className="footer-social">
