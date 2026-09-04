@@ -1,11 +1,14 @@
 import React from "react";
 import "../styles/Footer.css";
+import LogoFooter from '../assets/images/logo-footer.png'
 
 export default function Footer() {
   return (
     <footer className="footer">
       <section className="footer-logo">
-        <img src="src/assets/images/logo-dark-theme.png" alt="logo" />
+        <img 
+          src={LogoFooter} 
+          alt="logo" />
       </section>
 
       <address className="footer-contact">

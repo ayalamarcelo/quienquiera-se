@@ -20,16 +20,16 @@ function App() {
           <Servicios />
         </section>
 
-        <section id='resenias'>
-          <Resenias />
-        </section>
-        
         <section id='quienes-somos'>
           <QuienesSomos />
         </section>
 
         <section id='contacto'>
           <Contacto />
+        </section>
+
+        <section id='resenias'>
+          <Resenias />
         </section>
 
         <section id='portfolio'>

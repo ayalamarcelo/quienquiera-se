@@ -17,17 +17,15 @@
 .hero-section::before {
   content: "";
   position: absolute;
-  /* Margen extra amplio para que no se corten los bordes al moverse y rotar */
   inset: -30%;
 
   background:
-    /* Veta superior izquierda */
     radial-gradient(
       ellipse 45% 28% at 10% 15%,
       rgba(54, 84, 14, 0.65) 0%,
       rgba(54, 84, 14, 0.40) 30%,
       rgba(54, 84, 14, 0.18) 55%,
-      transparent 75%
+      transparent 90%
     ),
 
     /* Veta superior derecha */
@@ -36,7 +34,7 @@
       rgba(54, 84, 14, 0.60) 0%,
       rgba(54, 84, 14, 0.35) 35%,
       rgba(54, 84, 14, 0.12) 60%,
-      transparent 78%
+      transparent 7%
     ),
 
     /* Veta central */
@@ -61,7 +59,7 @@
     radial-gradient(
       ellipse 60% 30% at 10% 90%,
       rgba(54, 84, 14, 0.58) 0%,
-      rgba(54, 84, 14, 0.30) 35%,
+      rgba(54, 84, 14, 0.30) 55%,
       rgba(54, 84, 14, 0.12) 60%,
       transparent 80%
     ),
@@ -77,12 +75,10 @@
   filter: blur(70px);
   pointer-events: none;
 
-  /* Aplica la animación continua */
   animation: lavaLamp 22s ease-in-out infinite alternate;
   will-change: transform;
 }
 
-/* Movimiento orgánico multilinea */
 @keyframes lavaLamp {
   0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
@@ -105,8 +101,6 @@
   position: relative;
   z-index: 2;
 }
-
-/**/
 
 .hero-container {
   max-width: 800px;

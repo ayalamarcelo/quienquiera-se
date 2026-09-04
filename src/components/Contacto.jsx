@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/Contacto.css';
+import { motion } from 'framer-motion';
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,9 @@ export default function Contacto() {
     mensaje: ''
   });
 
+  // En Vite las variables públicas deben llevar el prefijo VITE_
+  const TELEFONO_WHATSAPP = import.meta.env.VITE_TELEFONO_WHATSAPP;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -16,24 +20,69 @@ export default function Contacto() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* Lógica para el formulario */
-    console.log('Datos enviados:', formData);
+
+    const serviciosLegibles = {
+      'correccion-estilo': 'Corrección de Estilo',
+      'correccion-ortotipografica': 'Corrección Ortotipográfica',
+      'consultoria': 'Consultoría',
+      'otro': 'Otro'
+    };
+
+    const servicioTexto = serviciosLegibles[formData.servicio] || formData.servicio;
+
+    const mensajeTexto =
+      `*NUEVA CONSULTA DESDE LA WEB*\n\n` +
+      `• *Nombre:* ${formData.nombre}\n` +
+      `• *Email:* ${formData.email}\n` +
+      `• *Servicio:* ${servicioTexto}\n\n` +
+      `*Mensaje:*\n${formData.mensaje}`;
+
+    const whatsappUrl = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(mensajeTexto)}`;
+
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Variantes para animaciones en cascada
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
 
   return (
-    <section className="contact-section">
-      <article className="contact-info">
+    <motion.section 
+      className="contact-section"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={containerVariants}
+    >
+      <motion.header className="contact-info" variants={itemVariants}>
         <p className="contact-subtitle">Hablemos de tu proyecto</p>
-        <h2>¿Tenés una idea en mente? Hagámosla realidad.</h2>
+        <h2>¿Tenés una idea en mente? Hagámosla <em>realidad</em>.</h2>
         <p className="contact-description">
-          Estamos listas para escucharte. Completa el formulario y nos
-          pondremos en contacto a la brevedad para discutir cómo podemos
-          ayudarte.
+          Estamos listas para escucharte. Completa el formulario y envianos tu consulta.
         </p>
-      </article>
+      </motion.header>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="nombre">
+      <motion.form 
+        className="contact-form" 
+        onSubmit={handleSubmit}
+        variants={containerVariants}
+      >
+        <motion.label htmlFor="nombre" variants={itemVariants}>
           Nombre completo
           <input
             type="text"
@@ -44,9 +93,9 @@ export default function Contacto() {
             onChange={handleChange}
             required
           />
-        </label>
+        </motion.label>
 
-        <label htmlFor="email">
+        <motion.label htmlFor="email" variants={itemVariants}>
           Correo electrónico
           <input
             type="email"
@@ -57,9 +106,9 @@ export default function Contacto() {
             onChange={handleChange}
             required
           />
-        </label>
+        </motion.label>
 
-        <label htmlFor="servicio">
+        <motion.label htmlFor="servicio" variants={itemVariants}>
           Tipo de servicio
           <select
             id="servicio"
@@ -69,28 +118,35 @@ export default function Contacto() {
             required
           >
             <option value="" disabled>Selecciona una opción</option>
-            <option value="desarrollo-web">Desarrollo Web</option>
-            <option value="diseno-ui-ux">Diseño UI/UX</option>
+            <option value="correccion-estilo">Corrección de Estilo</option>
+            <option value="correccion-ortotipografica">Corrección Ortotipográfica</option>
             <option value="consultoria">Consultoría</option>
             <option value="otro">Otro</option>
           </select>
-        </label>
+        </motion.label>
 
-        <label htmlFor="mensaje">
-          Cuéntanos sobre tu consulta
+        <motion.label htmlFor="mensaje" variants={itemVariants}>
+          Consultá sobre tu proyecto
           <textarea
             id="mensaje"
             name="mensaje"
             rows="5"
-            placeholder="Escribe tus dudas o detalles sobre el proyecto..."
+            placeholder="Contanos sobre tu proyecto..."
             value={formData.mensaje}
             onChange={handleChange}
             required
           ></textarea>
-        </label>
+        </motion.label>
 
-        <button type="submit">Enviar solicitud</button>
-      </form>
-    </section>
+        <motion.button 
+          type="submit"
+          variants={itemVariants}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          Enviar consulta
+        </motion.button>
+      </motion.form>
+    </motion.section>
   );
 }

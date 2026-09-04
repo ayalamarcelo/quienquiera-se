@@ -1,14 +1,13 @@
-/* ==========================================================================
-   ESTILOS GENERALES
-   ========================================================================== */
+/* Resenias.css */
+
 .resenas {
-  max-width: 900px;
+  padding: 3rem 1.5rem;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #1a202c;
+  overflow: hidden;
 }
 
+/* Header */
 .resenas__header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -16,306 +15,129 @@
 
 .resenas__title {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: bold;
   line-height: 3.5rem;
-  color: #0f172a;
-  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.resenas__title em {
+  color: #8375cc;
 }
 
 .resenas__subtitle {
-  font-size: 1rem;
-  color: #64748b;
+  font-size: 1.1rem;
+  color: #6b7280;
   margin: 0;
 }
 
-/* ==========================================================================
-   1. TARJETAS Y LISTA DE RESEÑAS (SECCIÓN SUPERIOR)
-   ========================================================================== */
-.resenas__list {
+/* Calesita / Carrusel */
+.resenas__carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.resenas__track {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 100%;
 }
 
+.resenas__slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+
+/* Card */
 .review-card {
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2rem;
   margin: 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
+/* Stars */
 .review-card__stars {
   color: #f59e0b;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   letter-spacing: 2px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
+/* Text */
 .review-card__text {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #334155;
-  margin: 0 0 1.25rem 0;
-  flex-grow: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0 0 1.5rem 0;
 }
 
+/* Author Info */
 .review-card__author {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  border-top: 1px solid #f1f5f9;
-  padding-top: 0.875rem;
+  gap: 1rem;
 }
 
 .review-card__avatar {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background-color: #f1f5f9;
+  background-color: #f3f4f6;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
 .review-card__info {
-  margin: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 .review-card__name {
   font-style: normal;
   font-weight: 600;
-  font-size: 0.875rem;
-  color: #0f172a;
+  color: #111827;
+  font-size: 1rem;
 }
 
 .review-card__role {
-  font-size: 0.75rem;
-  color: #64748b;
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 
-/* ==========================================================================
-   2. BOTÓN/LABEL DESPLEGABLE
-   ========================================================================== */
-.resenas__action-bar {
+/* Puntos indicadores */
+.resenas__dots {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
   display: flex;
   justify-content: center;
-  margin: 2.5rem 0 1.5rem 0;
+  gap: 0.5rem;
 }
 
-.btn-toggle-form {
-  background-color: #0f172a;
-  color: #ffffff;
-  border: none;
-  font-size: 0.95rem;
-  font-weight: 300;
-  padding: 0.875rem 1.75rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-}
-
-.btn-toggle-form:hover {
-  background-color: #1e293b;
-}
-
-.btn-toggle-form:active {
-  transform: translateY(0);
-}
-
-/* ==========================================================================
-   3. FORMULARIO DE RESEÑA (SECCIÓN INFERIOR)
-   ========================================================================== */
-.resenas__form {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.75rem;
-  margin-top: 1.5rem;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  animation: fadeIn 0.25s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.resenas__form h3 {
-  font-size: 1.25rem;
-  margin: 0 0 1.25rem 0;
-  color: #1e293b;
-  border-bottom: 2px solid #f1f5f9;
-  padding-bottom: 0.5rem;
-}
-
-.form-group {
-  margin: 0 0 1.25rem 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label,
-.fieldset-avatars legend,
-.fieldset-stars legend {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #334155;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.form-group input[type="text"],
-.form-group textarea {
-  width: 100%;
-  padding: 0.625rem 0.875rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  color: #0f172a;
-  background-color: #f8fafc;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  box-sizing: border-box;
-}
-
-.form-group input[type="text"]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-/* Selector de Avatares */
-.fieldset-avatars {
-  border: none;
-  padding: 0;
-  margin: 0 0 1.25rem 0;
-}
-
-.avatar-selector {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.avatar-option {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.avatar-image {
-  width: 52px;
-  height: 52px;
+.resenas__dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: #f1f5f9;
-  border: 2px solid #e2e8f0;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.avatar-image:hover {
-  transform: translateY(-2px);
-  border-color: #94a3b8;
-}
-
-.sr-only:focus + .avatar-image,
-.avatar-image.selected {
-  border-color: #2563eb;
-  background-color: #eff6ff;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Selector Interactivo de Estrellas */
-.fieldset-stars {
   border: none;
-  padding: 0;
-  margin: 0 0 1.25rem 0;
-}
-
-.star-rating {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 0.25rem;
-}
-
-.star-button {
-  background: none;
-  border: none;
-  font-size: 1.85rem;
-  color: #cbd5e1;
+  background-color: #d1d5db;
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  transition: color 0.15s ease, transform 0.15s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.star-button:hover,
-.star-button.active {
-  color: #f59e0b;
-}
-
-.star-button:hover {
-  transform: scale(1.25);
-}
-
-/* Botón de Publicar */
-.btn-submit {
-  width: 100%;
-  background-color: #2563eb;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.75rem 1.25rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.btn-submit:hover {
-  background-color: #1d4ed8;
-}
-
-.btn-submit:active {
-  transform: scale(0.99);
+.resenas__dot.active {
+  background-color: #8375cc;
+  transform: scale(1.2);
 }
