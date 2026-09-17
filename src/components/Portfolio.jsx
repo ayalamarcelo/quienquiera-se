@@ -1,41 +1,36 @@
 import React, { useState } from 'react';
+import Modal from '../components/Modal';
 import '../styles/Portfolio.css';
 
-const POSTS_DATA = [
+const PROJECTS_DATA = [
   {
     id: 1,
-    title: "Diferencias entre corrección ortotipográfica y de estilo",
+    title: "Edición integral: La Sombra del Viento",
     category: "Proceso Editorial",
-    readTime: "5 min lectura",
-    excerpt: "Descubre qué tipo de revisión necesita tu manuscrito antes de pasarlo a maquetación y cómo impacta en la lectura.",
+    client: "Editorial Planeta",
+    excerpt: "Corrección ortotipográfica, maquetación e ilustración para la edición de coleccionista.",
     date: "28 Ago, 2026",
+    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
     isFeatured: true,
   },
   {
     id: 2,
-    title: "Cómo preparar tu archivo Word antes de enviar a maquetar",
+    title: "Diseño y Maquetación de Novela Histórica",
     category: "Proceso Editorial",
-    readTime: "4 min lectura",
-    excerpt: "Guía práctica de estilos, saltos de página y limpieza de texto para evitar costes extra en la maquetación.",
+    client: "Autor Independiente",
+    excerpt: "Preparación completa del archivo de texto, diseño de tripas y maquetación lista para imprenta.",
     date: "20 Ago, 2026",
+    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
     isFeatured: false,
   },
   {
     id: 3,
-    title: "¿Qué es el ISBN y por qué tu libro lo necesita?",
+    title: "Registro Legal y Gestión ISBN para Saga Fantástica",
     category: "Aspectos Legales",
-    readTime: "3 min lectura",
-    excerpt: "Todo sobre el registro legal, códigos de barras y derechos de autor explicados sin tecnicismos.",
+    client: "Ediciones Letras",
+    excerpt: "Tramitación de ISBN, depósito legal y protección de derechos de autor para trilogía.",
     date: "15 Ago, 2026",
-    isFeatured: false,
-  },
-  {
-    id: 4,
-    title: "Estrategias de marketing para la presentación de tu libro",
-    category: "Marketing Editorial",
-    readTime: "7 min lectura",
-    excerpt: "Cómo llenar la sala en tu lanzamiento y conseguir que las librerías locales muestren interés en tu obra.",
-    date: "02 Ago, 2026",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
     isFeatured: false,
   }
 ];
@@ -44,54 +39,56 @@ const CATEGORIES = ["Todos", "Proceso Editorial", "Aspectos Legales", "Marketing
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [activeProject, setActiveProject] = useState(null); // Estado para el modal
 
-  const filteredPosts = POSTS_DATA.filter((post) => {
-    const matchesCategory = selectedCategory === "Todos" || post.category === selectedCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+  const filteredProjects = PROJECTS_DATA.filter((project) => {
+    return selectedCategory === "Todos" || project.category === selectedCategory;
   });
 
-  const featuredPost = POSTS_DATA.find((p) => p.isFeatured);
+  const featuredProject = PROJECTS_DATA.find((p) => p.isFeatured);
 
   return (
-    <main className="editorial-blog">
+    <main className="editorial-portfolio">
 
-      <header className="blog-header">
-        <mark className="blog-badge">Recursos para Autores</mark>
-        <h1 className="blog-title">El Blog Editorial</h1>
-        <p className="blog-subtitle">
-          Guías, consejos de edición y estrategias para transformar tu manuscrito en un libro profesional.
+      <header className="portfolio-header">
+        <h1>Nuestros <em>Proyectos</em></h1>
+        <p className="portfolio-subtitle">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </header>
 
-      {featuredPost && (
+      {featuredProject && (
         <article className="featured-card">
-          <header className="card-meta">
-            <span className="category-tag">{featuredPost.category}</span>
-            <time className="read-time">{featuredPost.readTime}</time>
-          </header>
-          <h2 className="featured-title">{featuredPost.title}</h2>
-          <p className="featured-excerpt">{featuredPost.excerpt}</p>
-          <footer className="featured-footer">
-            <time className="post-date">{featuredPost.date}</time>
-            <button type="button" className="read-more-btn">Leer Artículo Completo →</button>
-          </footer>
+          <figure className="card-image-wrapper">
+            <img 
+              src={featuredProject.image} 
+              alt={featuredProject.title} 
+              className="card-image"
+            />
+          </figure>
+          <section className="card-content">
+            <header className="card-meta">
+              <span className="category-tag">{featuredProject.category}</span>
+              <address className="client-tag">{featuredProject.client}</address>
+            </header>
+            <h2 className="featured-title">{featuredProject.title}</h2>
+            <p className="featured-excerpt">{featuredProject.excerpt}</p>
+            <footer className="featured-footer">
+              <time className="post-date">{featuredProject.date}</time>
+              <button 
+                type="button" 
+                className="read-more-btn"
+                onClick={() => setActiveProject(featuredProject)}
+              >
+                Ver Proyecto Completo →
+              </button>
+            </footer>
+          </section>
         </article>
       )}
 
-      <nav className="blog-controls" aria-label="Filtros de búsqueda y categorías">
-        <form className="search-wrapper" onSubmit={(e) => e.preventDefault()}>
-          <input
-            type="search"
-            placeholder="Buscar guías o artículos..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input"
-          />
-        </form>
-
+      {/* Filtros */}
+      <nav className="portfolio-controls" aria-label="Filtros de proyectos">
         <menu className="category-filters">
           {CATEGORIES.map((cat) => (
             <li key={cat}>
@@ -107,37 +104,49 @@ export default function Portfolio() {
         </menu>
       </nav>
 
-      <section className="posts-grid" aria-label="Lista de artículos">
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post) => (
-            <article key={post.id} className="post-card">
-              <header className="card-meta">
-                <span className="category-tag">{post.category}</span>
-                <time className="read-time">{post.readTime}</time>
-              </header>
-              <h3 className="post-card-title">{post.title}</h3>
-              <p className="post-card-excerpt">{post.excerpt}</p>
-              <footer className="post-card-footer">
-                <time className="post-date">{post.date}</time>
-                <a href={`#post-${post.id}`} className="card-link">Leer más</a>
-              </footer>
+      <section className="posts-grid" aria-label="Lista de proyectos">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project) => (
+            <article key={project.id} className="post-card">
+              <figure className="card-image-wrapper">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="card-image"
+                  loading="lazy"
+                />
+              </figure>
+              <section className="card-content">
+                <header className="card-meta">
+                  <span className="category-tag">{project.category}</span>
+                  <address className="client-tag">{project.client}</address>
+                </header>
+                <h3 className="post-card-title">{project.title}</h3>
+                <p className="post-card-excerpt">{project.excerpt}</p>
+                <footer className="post-card-footer">
+                  <time className="post-date">{project.date}</time>
+                  <button 
+                    type="button" 
+                    className="card-link-btn"
+                    onClick={() => setActiveProject(project)}
+                  >
+                    Ver detalles
+                  </button>
+                </footer>
+              </section>
             </article>
           ))
         ) : (
-          <p className="no-results">No se encontraron artículos que coincidan con tu búsqueda.</p>
+          <p className="no-results">No se encontraron proyectos en esta categoría.</p>
         )}
       </section>
 
-      <aside className="blog-cta" aria-label="Llamada a la acción">
-        <header className="cta-content">
-          <h3>¿Tienes un manuscrito listo para publicar?</h3>
-          <p>Descarga nuestra checklist gratuita de verificación previa a la edición o solicita un presupuesto ajustado a tu obra.</p>
-        </header>
-        <nav className="cta-actions">
-          <button type="button" className="cta-primary">Presupuestar mi libro</button>
-          <button type="button" className="cta-secondary">Descargar Checklist PDF</button>
-        </nav>
-      </aside>
+      {/* Ventana emergente (Modal) */}
+      <Modal 
+        project={activeProject} 
+        onClose={() => setActiveProject(null)} 
+      />
+
     </main>
   );
 }

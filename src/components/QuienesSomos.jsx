@@ -3,7 +3,6 @@ import "../styles/QuienesSomos.css";
 
 import avatar1 from "../assets/images/avatar-img-1.svg";
 import avatar2 from "../assets/images/avatar-img-2.svg";
-import { section } from "framer-motion/client";
 
 export default function QuienesSomos() {
   return (

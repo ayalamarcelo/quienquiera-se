@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import TextReveal from './TextReveal';
 import '../styles/Navbar.css';
+import LogoLight from "../assets/images/logo-white.png";
 import Logo from "../assets/images/logo-dark.png";
 
-export default function Navbar() {
+export default function Navbar({ logovariant = 'default' }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,9 +21,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Servicios', href: '#servicios' },
-    { name: '¿Quiénes somos?', href: '#quienes-somos' },
     { name: 'Contacto', href: '#contacto' },
-    { name: 'Reseñas', href: '#resenias' },
+    { name: '¿Quiénes somos?', href: '#quienes-somos' },
     { name: 'Portfolio', href: '#portfolio' },
   ];
 
@@ -33,11 +33,10 @@ export default function Navbar() {
         <a href="#home" className="navbar-logo">
           <img 
             className="logo-qq"
-            src={Logo}
+            src={logovariant === 'light' ? LogoLight : Logo}
             alt="logo-qq" />
         </a>
 
-        {/* Menú Desktop con motion Text Reveal */}
         <ul className="navbar-menu-desktop">
           {navLinks.map((link) => (
             <li key={link.name}>

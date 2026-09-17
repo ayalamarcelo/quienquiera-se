@@ -4,7 +4,8 @@ import Servicios from './components/Servicios.jsx'
 import Contacto from './components/Contacto.jsx'
 import Footer from './components/Footer.jsx'
 import QuienesSomos from './components/QuienesSomos.jsx'
-import Resenias from './components/Resenias.jsx'
+// import Resenias from './components/Resenias.jsx'
+import ServiceDetail from './components/ServiceDetail.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import './App.css'
 
@@ -19,18 +20,18 @@ function App() {
         <section id='servicios'>
           <Servicios />
         </section>
-
+        
+        <section id='contacto'>
+          <Contacto />
+        </section>
+        
         <section id='quienes-somos'>
           <QuienesSomos />
         </section>
 
-        <section id='contacto'>
-          <Contacto />
-        </section>
-
-        <section id='resenias'>
+        {/* <section id='resenias'>
           <Resenias />
-        </section>
+        </section> */}
 
         <section id='portfolio'>
           <Portfolio />

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Goudy+Bookletter+1911&display=swap');
 
 #contacto {
-  background-color: #f4faa1a1;
+  background-color: #36540ed5;
   font-family: "Bricolage Grotesque", sans-serif;
 }
 
@@ -13,7 +13,7 @@
   margin: 0 auto;
   padding: 4rem 1.5rem;
   align-items: center;
-  color: #000;
+  color: #f4faa1a1;
 }
 
 .contact-info {
@@ -23,7 +23,7 @@
 }
 
 .contact-subtitle {
-  color: #1e293b;
+  color: #f4faa1a1;
   font-weight: 300;
   font-size: 1.2rem;
   margin: 0;
@@ -32,18 +32,17 @@
 .contact-info h2 {
   font-size: 3rem;
   line-height: 2.5rem;
-  color: #36540e;
+  color: #f4faa1a1;
   margin: 0;
 }
 
 .contact-description {
-  color: #1e293b;
+  color: #f4faa1a1;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
 }
 
-/* Columna Derecha: Formulario */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -93,19 +92,19 @@
 
 .contact-form button {
   padding: 0.875rem 1.5rem;
-  background-color: #36540e;
-  color: #f4faa1;
+  background-color: #577036;
+  color: #f4faa1a1;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
   margin-top: 0.5rem;
 }
 
 .contact-form button:hover {
-  background-color: #36540ed6;
+  background-color: #36540eee;
 }
 
 @media (max-width: 768px) {

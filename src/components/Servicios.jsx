@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ServiceDetail from '../components/ServiceDetail.jsx';
 import '../styles/Servicios.css';
 
 const serviciosData = [
@@ -6,30 +7,37 @@ const serviciosData = [
     id: 1,
     titulo: 'Corrección de Estilo',
     descripcion: 'Pulido de fluidez, coherencia, tono y riqueza léxica para enriquecer la lectura sin perder la voz del autor.',
+    imagen: 'https://via.placeholder.com/1200x400',
   },
   {
     id: 2,
     titulo: 'Corrección Ortotipográfica',
     descripcion: 'Revisión exhaustiva de ortografía, gramática, puntuación y normas tipográficas aplicadas a la maquetación.',
+    imagen: 'https://via.placeholder.com/1200x400',
   },
   {
     id: 3,
     titulo: 'Informe de Lectura Editorial',
     descripcion: 'Análisis crítico de estructura narrativa, ritmo, desarrollo de personajes y viabilidad comercial del manuscrito.',
+    imagen: 'https://via.placeholder.com/1200x400',
   },
   {
     id: 4,
     titulo: 'Edición y Desarrollo de Manuscritos',
     descripcion: 'Acompañamiento estructural paso a paso para dar forma al borrador antes del proceso de diagramación.',
+    imagen: 'https://via.placeholder.com/1200x400',
   },
   {
     id: 5,
     titulo: 'Corrección de Pruebas (Proofreading)',
     descripcion: 'Última revisión sobre galeradas maquetadas para eliminar erratas, viudas, huérfanas y fallos de maquetación.',
+    imagen: 'https://via.placeholder.com/1200x400',
   },
 ];
 
 export default function Servicios() {
+  const [selectedService, setSelectedService] = useState(null);
+
   return (
     <section className="servicios-container">
       <header className="servicios-header">
@@ -57,13 +65,25 @@ export default function Servicios() {
                 </p>
               </div>
 
-              <a href={`#servicio-${servicio.id}`} className="servicio-card-link">
+              <button 
+                type="button"
+                onClick={() => setSelectedService(servicio)} 
+                className="servicio-card-link"
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+              >
                 Leer más &rarr;
-              </a>
+              </button>
             </article>
           </li>
         ))}
       </ul>
+
+      {selectedService && (
+        <ServiceDetail 
+          service={selectedService} 
+          onClose={() => setSelectedService(null)} 
+        />
+      )}
     </section>
   );
 }

@@ -191,7 +191,6 @@
   }
 }
 
-/* Escritorio / Pantallas Grandes (>= 1024px) */
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 5rem;

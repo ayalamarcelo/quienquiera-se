@@ -6,18 +6,15 @@
   width: 100%;
   max-width: 100%;
   z-index: 1000;
-  
+  background-color: transparent;
   transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
-  
-  background-color: #050810;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.108);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-header.scrolled {
   background-color:  rgba(255, 255, 255, 0.166);
+  backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
 }
 
 /* Contenedor principal */
@@ -25,10 +22,11 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: 70px;
+  height: 80px;
+  top: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
 }
 
@@ -53,14 +51,9 @@
   color: #718d4c;
   text-decoration: none;
   font-family: "Bricolage Grotesque", sans-serif;
-  font-weight: 400;
+  font-weight: 550;
   transition: color 0.2s ease;
 }
-
-/* .navbar-link:hover {
-  color: #36540e;
-  transition: color weight 0.2s ease-in-out;
-} */
 
 /* Botón Hamburguesa */
 .navbar-toggle {
@@ -100,8 +93,6 @@
   max-width: 2.5rem;
 }
 
-/*Text Reveal Precision Styling*/
-
 /* Padre del enlace */
 .text-reveal-link {
   position: relative;
@@ -112,7 +103,6 @@
   vertical-align: middle;
 }
 
-/* Envoltorio que limita la altura */
 .text-reveal-wrapper {
   position: relative;
   display: block;
@@ -120,20 +110,28 @@
   white-space: nowrap;
 }
 
-/* Estilo individual de cada línea de texto */
 .text-reveal-item {
   display: block;
   line-height: 1.2;
-  padding: 2px 0; /* Espaciado de seguridad para letras descendentes como p, g, y */
+  padding: 2px 0;
 }
 
-/* El clon se posiciona encima en la misma coordenada top/left */
 .text-reveal-clone {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.navbar-header.navbar-light-mode .navbar-link,
+.navbar-header.navbar-light-mode .navbar-link-mobile,
+.navbar-header.navbar-light-mode .navbar-toggle {
+  color: #ffffff;
+}
+
+.navbar-header.navbar-light-mode a {
+  color: #ffffff;
 }
 
 /* Reglas Responsive */

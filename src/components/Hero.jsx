@@ -30,7 +30,7 @@ export default function Hero() {
 
                 <nav className="hero-actions" aria-label="Acciones principales">
                     <a href="#contacto" className="btn btn-primary">
-                        <em>Dejanos tu consulta</em>
+                        Dejanos tu consulta
                     </a>
                     <a href="#servicios" className="btn btn-secondary">
                         Ver servicios

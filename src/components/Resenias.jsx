@@ -62,8 +62,7 @@ export default function Resenas() {
           Opiniones reales de personas que confían en nuestro trabajo.
         </p>
       </header>
-
-      {/* Calesita Container */}
+      
       <section className="resenas__carousel" aria-roledescription="carrusel">
         <ul
           className="resenas__track"

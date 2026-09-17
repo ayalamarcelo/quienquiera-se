@@ -10,8 +10,7 @@ export default function Contacto() {
     mensaje: ''
   });
 
-  // En Vite las variables públicas deben llevar el prefijo VITE_
-  const TELEFONO_WHATSAPP = import.meta.env.VITE_TELEFONO_WHATSAPP;
+  const TELEFONO_WHATSAPP = import.meta.env.VITE_WHATSAPP_NUMBER;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -138,14 +137,11 @@ export default function Contacto() {
           ></textarea>
         </motion.label>
 
-        <motion.button 
+        <button 
           type="submit"
-          variants={itemVariants}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
         >
           Enviar consulta
-        </motion.button>
+        </button>
       </motion.form>
     </motion.section>
   );
