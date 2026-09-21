@@ -10,7 +10,8 @@ export default function Contacto() {
     mensaje: ''
   });
 
-  const TELEFONO_WHATSAPP = import.meta.env.VITE_WHATSAPP_NUMBER;
+  const PHONE_BASE64 = 'KzU0OTExNTg1NDk4NTg=';
+  const phoneNumber = decodeURIComponent(escape(atob(PHONE_BASE64)));
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +37,7 @@ export default function Contacto() {
       `• *Servicio:* ${servicioTexto}\n\n` +
       `*Mensaje:*\n${formData.mensaje}`;
 
-    const whatsappUrl = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(mensajeTexto)}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensajeTexto)}`;
 
     window.open(whatsappUrl, '_blank');
   };
