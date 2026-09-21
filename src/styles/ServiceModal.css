@@ -19,15 +19,16 @@
   overflow-y: auto;
   position: relative;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  padding: 2.5rem;
-  overflow-x: hidden; 
+  /* Quitamos el padding global para que el banner toque los bordes */
+  padding: 0; 
+  overflow-x: hidden;
 }
 
 .close-button {
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -46,21 +47,32 @@
   background: #ffffff;
 }
 
+/* Banner superior que abarca todo el ancho exacto */
+.service-banner-wrapper {
+  width: 100%;
+}
+
 .service-figure {
-  width: calc(100% + 50rem);
-  margin-left: -2.5rem;
-  margin-right: -2.5rem;
-  margin-top: -2.5rem;
-  height: 280px;
+  width: 100%;
+  height: 300px;
+  background-color: #f8f9fa; /* Fondo sutil para el contain */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  border-radius: 12px 12px 0 0;
   overflow: hidden;
-  margin-bottom: 2rem;
-  border-radius: 12px 12px 0 0; 
 }
 
 .service-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Protege los rostros */
+}
+
+/* Contenido inferior que maneja el espaciado interior (padding) */
+.service-body-content {
+  padding: 2.5rem;
 }
 
 .service-header {
@@ -117,5 +129,8 @@
 @media (max-width: 768px) {
   .service-main-content {
     grid-template-columns: 1fr;
+  }
+  .service-body-content {
+    padding: 1.5rem;
   }
 }
