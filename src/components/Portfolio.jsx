@@ -10,7 +10,12 @@ const PROJECTS_DATA = [
     client: "Editorial Planeta",
     excerpt: "Corrección ortotipográfica, maquetación e ilustración para la edición de coleccionista.",
     date: "28 Ago, 2026",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+    // Mantenemos el arreglo de hasta 3 imágenes para que el Modal las use
+    images: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+    ],
     isFeatured: true,
   },
   {
@@ -20,7 +25,10 @@ const PROJECTS_DATA = [
     client: "Autor Independiente",
     excerpt: "Preparación completa del archivo de texto, diseño de tripas y maquetación lista para imprenta.",
     date: "20 Ago, 2026",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
+    ],
     isFeatured: false,
   },
   {
@@ -30,7 +38,9 @@ const PROJECTS_DATA = [
     client: "Ediciones Letras",
     excerpt: "Tramitación de ISBN, depósito legal y protección de derechos de autor para trilogía.",
     date: "15 Ago, 2026",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+    ],
     isFeatured: false,
   }
 ];
@@ -60,8 +70,9 @@ export default function Portfolio() {
       {featuredProject && (
         <article className="featured-card">
           <figure className="card-image-wrapper">
+            {/* Muestra únicamente la primera imagen en la tarjeta principal */}
             <img 
-              src={featuredProject.image} 
+              src={featuredProject.images[0]} 
               alt={featuredProject.title} 
               className="card-image"
             />
@@ -109,8 +120,9 @@ export default function Portfolio() {
           filteredProjects.map((project) => (
             <article key={project.id} className="post-card">
               <figure className="card-image-wrapper">
+                {/* Muestra únicamente la primera imagen de la lista en cada card */}
                 <img 
-                  src={project.image} 
+                  src={project.images[0]} 
                   alt={project.title} 
                   className="card-image"
                   loading="lazy"
@@ -141,7 +153,7 @@ export default function Portfolio() {
         )}
       </section>
 
-      {/* Ventana emergente (Modal) */}
+      {/* Ventana emergente (Modal) con el carrusel */}
       <Modal 
         project={activeProject} 
         onClose={() => setActiveProject(null)} 

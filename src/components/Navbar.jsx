@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import TextReveal from './TextReveal';
 import '../styles/Navbar.css';
-import LogoLight from "../assets/images/logo-white.png";
-import Logo from "../assets/images/logo-dark.png";
+import Logo from "../assets/images/logo/logo-dark.png";
 
-export default function Navbar({ logovariant = 'default' }) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,8 +32,9 @@ export default function Navbar({ logovariant = 'default' }) {
         <a href="#home" className="navbar-logo">
           <img 
             className="logo-qq"
-            src={logovariant === 'light' ? LogoLight : Logo}
-            alt="logo-qq" />
+            src={Logo}
+            alt="logo-qq" 
+          />
         </a>
 
         <ul className="navbar-menu-desktop">

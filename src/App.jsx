@@ -5,7 +5,7 @@ import Contacto from './components/Contacto.jsx'
 import Footer from './components/Footer.jsx'
 import QuienesSomos from './components/QuienesSomos.jsx'
 // import Resenias from './components/Resenias.jsx'
-import ServiceDetail from './components/ServiceDetail.jsx'
+import ServiceDetail from './components/ServiceModal.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import './App.css'
 
