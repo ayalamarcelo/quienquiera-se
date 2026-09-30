@@ -14,8 +14,17 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
                     >
-                        Lorem <em>ipsum</em> dolor sit amet consectetur.
+                        <em>Quienquiera</em> Servicios Editoriales
                     </motion.h1>
+                    
+                    <motion.h3
+                        className="hero-description"
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                    >
+                        Un espacio donde quienquiera pueda publicarse
+                    </motion.h3>
 
                     <motion.p
                         className="hero-description"
@@ -23,7 +32,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                     >
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, recusandae adipisci. Eum.
+                        Servicios editoriales: edición integral, maquetación e informes de lectura.
                     </motion.p>
 
                 </header>

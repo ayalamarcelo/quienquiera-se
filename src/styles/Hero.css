@@ -20,57 +20,35 @@
   inset: -30%;
 
   background:
-    radial-gradient(
-      ellipse 45% 28% at 10% 15%,
+    radial-gradient(ellipse 45% 28% at 10% 15%,
       rgba(54, 84, 14, 0.65) 0%,
       rgba(54, 84, 14, 0.40) 30%,
       rgba(54, 84, 14, 0.18) 55%,
-      transparent 90%
-    ),
-
-    /* Veta superior derecha */
-    radial-gradient(
-      ellipse 55% 32% at 80% 10%,
+      transparent 90%),
+    radial-gradient(ellipse 55% 32% at 80% 10%,
       rgba(54, 84, 14, 0.60) 0%,
       rgba(54, 84, 14, 0.35) 35%,
       rgba(54, 84, 14, 0.12) 60%,
-      transparent 7%
-    ),
-
-    /* Veta central */
-    radial-gradient(
-      ellipse 65% 30% at 40% 45%,
+      transparent 7%),
+    radial-gradient(ellipse 65% 30% at 40% 45%,
       rgba(54, 84, 14, 0.55) 0%,
       rgba(54, 84, 14, 0.30) 35%,
       rgba(54, 84, 14, 0.12) 60%,
-      transparent 78%
-    ),
-
-    /* Veta inferior derecha */
-    radial-gradient(
-      ellipse 55% 35% at 90% 70%,
+      transparent 78%),
+    radial-gradient(ellipse 55% 35% at 90% 70%,
       rgba(54, 84, 14, 0.62) 0%,
       rgba(54, 84, 14, 0.35) 35%,
       rgba(54, 84, 14, 0.14) 60%,
-      transparent 80%
-    ),
-
-    /* Veta inferior izquierda */
-    radial-gradient(
-      ellipse 60% 30% at 10% 90%,
+      transparent 80%),
+    radial-gradient(ellipse 60% 30% at 10% 90%,
       rgba(54, 84, 14, 0.58) 0%,
       rgba(54, 84, 14, 0.30) 55%,
       rgba(54, 84, 14, 0.12) 60%,
-      transparent 80%
-    ),
-
-    /* Luz blanca central */
-    radial-gradient(
-      ellipse 55% 40% at 50% 50%,
+      transparent 80%),
+    radial-gradient(ellipse 55% 40% at 50% 50%,
       rgba(255, 255, 255, 0.85) 0%,
       rgba(245, 252, 247, 0.45) 45%,
-      transparent 75%
-    );
+      transparent 75%);
 
   filter: blur(70px);
   pointer-events: none;
@@ -83,21 +61,25 @@
   0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
   }
+
   25% {
     transform: translate(3%, -5%) scale(1.12, 0.92) rotate(4deg);
   }
+
   50% {
     transform: translate(-4%, 4%) scale(0.9, 1.15) rotate(-6deg);
   }
+
   75% {
     transform: translate(5%, -2%) scale(1.08, 0.95) rotate(3deg);
   }
+
   100% {
     transform: translate(-3%, 3%) scale(0.95, 1.05) rotate(-4deg);
   }
 }
 
-.hero-section > * {
+.hero-section>* {
   position: relative;
   z-index: 2;
 }
@@ -116,17 +98,25 @@
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 800;
   color: #0f172a;
-  line-height: 0.8;
+  line-height: 0.95;
   margin-bottom: 1rem;
+  letter-spacing: -2px;
 }
 
 .hero-description {
   font-size: 1rem;
   color: #475569;
   line-height: 1.6;
+}
+
+h3.hero-description {
+  color: #0f172a;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 700;
 }
 
 .hero-actions {
@@ -169,31 +159,89 @@
   border: 1px solid #1e293b90;
 }
 
-/* Media queries */
-/* Tablets en adelante (>= 640px) */
-@media (min-width: 640px) {
+@media (width < 640px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .hero-container {
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+
   .hero-title {
-    font-size: 5rem;
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  h3.hero-description {
+    font-size: 1.15rem;
+    font-weight: 700;
   }
 
   .hero-description {
-    font-size: 1.125rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Tablets en adelante (>= 640px) */
+@media (min-width: 640px) {
+  .hero-container {
+    padding: 0 2rem;
+  }
+
+  .hero-title {
+    font-size: 4.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  h3.hero-description {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
   }
 
   .hero-actions {
     flex-direction: row;
     justify-content: center;
     width: auto;
+    gap: 1rem;
   }
 
   .btn {
     width: auto;
+    margin: 0;
   }
 }
 
+/* Escritorio / Pantallas grandes (>= 1024px) */
 @media (min-width: 1024px) {
+  .hero-container {
+    padding: 0;
+  }
+
   .hero-title {
-    font-size: 5rem;
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 1.1;
   }
 
   .hero-description {
