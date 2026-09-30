@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ServiceModal from './ServiceModal.jsx';
-import { serviciosData } from '../data/cardsData.js';
+import serviciosData from '../data/serviciosData.json';
 import { SlArrowRight } from "react-icons/sl";
 import '../styles/Servicios.css';
 

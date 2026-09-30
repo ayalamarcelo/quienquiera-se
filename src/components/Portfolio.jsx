@@ -45,7 +45,7 @@ const PROJECTS_DATA = [
   }
 ];
 
-const CATEGORIES = ["Todos", "Proceso Editorial", "Aspectos Legales", "Marketing Editorial", "Casos de Éxito"];
+const CATEGORIES = ["Todos", "Tabitha King", "Vera Nabokova", "Sophia Tolstaya", "Olivia Langdon", "Anna Grigoryevna"];
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
@@ -70,7 +70,6 @@ export default function Portfolio() {
       {featuredProject && (
         <article className="featured-card">
           <figure className="card-image-wrapper">
-            {/* Muestra únicamente la primera imagen en la tarjeta principal */}
             <img 
               src={featuredProject.images[0]} 
               alt={featuredProject.title} 
@@ -120,7 +119,6 @@ export default function Portfolio() {
           filteredProjects.map((project) => (
             <article key={project.id} className="post-card">
               <figure className="card-image-wrapper">
-                {/* Muestra únicamente la primera imagen de la lista en cada card */}
                 <img 
                   src={project.images[0]} 
                   alt={project.title} 

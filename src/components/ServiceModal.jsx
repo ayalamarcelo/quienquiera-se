@@ -54,17 +54,23 @@ export default function ServiceModal({ service, onClose }) {
           <main className="service-main-content">
             <section className="service-text-section">
               <header>
-                <h2>Detalles y Alcance</h2>
+                <h2>{service.subtitulo}</h2>
               </header>
-              <p>{service.descripcion}</p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: service?.descripcion
+                    ? service.descripcion.replace(/\n/g, '<br />')
+                    : ''
+                }}
+              />
             </section>
 
             <aside className="service-explanation-sidebar">
               <header>
-                <h2>Resumen del Servicio</h2>
+                <h2>¿Quién es {service.titulo}?</h2>
               </header>
               <p>
-                Trabajamos de la mano contigo para asegurar que tu obra cumpla con los más altos estándares de calidad editorial antes de ver la luz.
+                {service.historia}
               </p>
             </aside>
           </main>
