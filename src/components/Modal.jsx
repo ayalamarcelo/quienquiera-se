@@ -4,12 +4,10 @@ import '../styles/Modal.css';
 export default function Modal({ project, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Reiniciar el índice al abrir un proyecto nuevo
   useEffect(() => {
     setCurrentIndex(0);
   }, [project]);
 
-  // Manejo de la tecla Escape para cerrar
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -18,7 +16,6 @@ export default function Modal({ project, onClose }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  // Rotación automática de las imágenes cada 4 segundos
   useEffect(() => {
     if (!project?.images || project.images.length <= 1) return;
 
@@ -31,7 +28,6 @@ export default function Modal({ project, onClose }) {
 
   if (!project) return null;
 
-  // Obtenemos las imágenes (soporta tanto 'images' como 'image' por compatibilidad)
   const images = project.images || (project.image ? [project.image] : []);
 
   return (
@@ -62,7 +58,7 @@ export default function Modal({ project, onClose }) {
               ))}
             </div>
 
-            {/* Dots indicadores */}
+
             {images.length > 1 && (
               <div className="carousel-dots">
                 {images.map((_, index) => (

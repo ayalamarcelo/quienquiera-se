@@ -29,7 +29,7 @@ export default function Servicios() {
           Nuestros <em>servicios</em>
         </h1>
         <p className="servicios-descripcion">
-          Acompañamos a autores y editoriales en cada etapa del texto para garantizar obras impecables, coherentes y listas para publicación.
+          Ofrecemos más que servicios: acompañamiento real y calidad editorial en cada etapa del proceso para que tu obra esté lista para publicarse.
         </p>
       </header>
 

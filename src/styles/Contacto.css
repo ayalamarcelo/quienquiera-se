@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Goudy+Bookletter+1911&display=swap');
-
 #contacto {
   background-color: #36540ed5;
-  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .contact-section {
@@ -23,21 +20,22 @@
 }
 
 .contact-subtitle {
-  color: #f4faa1a1;
-  font-weight: 300;
-  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.3rem;
   margin: 0;
 }
 
 .contact-info h2 {
   font-size: 3rem;
-  line-height: 2.5rem;
-  color: #f4faa1a1;
+  line-height: 3rem;
+  font-weight: 600;
+  color: #fff;
   margin: 0;
 }
 
 .contact-description {
-  color: #f4faa1a1;
+  color: #fff;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
@@ -83,7 +81,7 @@
   outline: none;
   border-color: #334155;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .contact-form textarea {
@@ -93,18 +91,18 @@
 .contact-form button {
   padding: 0.875rem 1.5rem;
   background-color: #577036;
-  color: #f4faa1a1;
+  color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 200;
   cursor: pointer;
   transition: background-color 0.4s ease-in-out;
   margin-top: 0.5rem;
 }
 
 .contact-form button:hover {
-  background-color: #36540eee;
+  background-color: #577036f1;
 }
 
 @media (max-width: 768px) {
@@ -115,6 +113,8 @@
   }
 
   .contact-info h2 {
-    font-size: 1.875rem;
+    font-size: 2.3rem;
+    font-weight: 900;
+    line-height: 2.5rem;
   }
 }

@@ -13,7 +13,7 @@ export default function QuienesSomos() {
             ¿Quiénes <em>Somos?</em>
           </h2>
           <p className="quienes-somos__subtitle">
-            Conoce la historia, visión y el equipo detrás de nuestro sello editorial.
+            Conocé la historia de Quienquiera, nuestro equipo y la razón de ser de este proyecto.
           </p>
         </header>
 
@@ -21,8 +21,10 @@ export default function QuienesSomos() {
           <article className="info-card">
             <h3 className="info-card__title">Nuestra Historia</h3>
             <p className="info-card__text">
-              Fundada con la misión de transformar el sector editorial, nuestra consultora ha
-              crecido enfocada en la calidad tipográfica, la rigurosidad ortotipográfica y el compromiso con cada manuscrito.
+              Quienquiera nació de la pregunta: ¿Qué necesitan realmente los autores?
+              Trabajar en el manuscrito puede parecer sencillo, pero una vez terminado los autores se encuentran frente a miles de decisiones editoriales que pueden resultar avasallantes.
+              Es por eso que Quienquiera se presenta como la mejor opción para aquellos autores que buscan acompañamiento real a la hora de trabajar sobre la producción de su libro y respeto sobre su voz autoral.
+              En Quienquiera te ofrecemos diferentes servicios pensados para vos y para cuidar tu obra,  y te ayudamos a elegir las opciones que mejor se amoldan a tu manuscrito.
             </p>
           </article>
 
@@ -30,12 +32,10 @@ export default function QuienesSomos() {
             <h3 className="info-card__title">Misión y Visión</h3>
             <ul className="info-card__list">
               <li className="info-card__item">
-                <strong>Misión:</strong> Aportar valor a autores y editoriales mediante
-                soluciones de corrección y maquetación de alta calidad.
+                <strong>Misión:</strong> Potenciar proyectos de autores independientes asegurando calidad editorial, acompañamiento cercano y respeto total a sus ideas, para que cada obra alcance su mejor versión.
               </li>
               <li className="info-card__item">
-                <strong>Visión:</strong> Ser un referente editorial independiente,
-                impulsando obras con excelencia estética y narrativa.
+                <strong>Visión:</strong> Queremos consolidarnos como referentes en servicios editoriales para autores independientes con calidad, claridad y sensibilidad. Aspiramos a expandir nuestro alcance, impulsar nuevas voces y formar un espacio donde la edición cuidada y acompañamiento sean un sello distintivo.
               </li>
             </ul>
           </article>
@@ -56,7 +56,7 @@ export default function QuienesSomos() {
                     <p className="team-card__role">Editora, UBA</p>
 
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/malena-cabrera-editora/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="team-card__linkedin"
@@ -75,7 +75,7 @@ export default function QuienesSomos() {
                     </a>
 
                     <p className="team-card__bio">
-                      Especialista en corrección de estilo y maquetación de manuscritos. Apasionada por cuidar el ritmo de lectura y preservar la voz original de cada autor.
+                      Directora general, responsable de diseño, edición y comunicación.
                     </p>
                   </figcaption>
                 </figure>
@@ -91,11 +91,11 @@ export default function QuienesSomos() {
                     alt="María Ferenaz"
                   />
                   <figcaption className="team-card__caption">
-                    <h4 className="team-card__name">María Ferenaz</h4>
+                    <h4 className="team-card__name">María Segunda Ferenaz</h4>
                     <p className="team-card__role">Editora, UBA</p>
 
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/maría-segunda-ferenaz-editora/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="team-card__linkedin"
@@ -114,7 +114,7 @@ export default function QuienesSomos() {
                     </a>
 
                     <p className="team-card__bio">
-                      Experta en revisión ortotipográfica e informes de lectura. Su enfoque riguroso garantiza publicaciones limpias, sin erratas y listas para imprenta.
+                      Directora general, responsable de corrección, edición e informes.
                     </p>
                   </figcaption>
                 </figure>

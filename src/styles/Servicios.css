@@ -1,3 +1,7 @@
+#servicios {
+  background-color: #f1f5f03d;
+}
+
 .servicios-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -26,7 +30,6 @@
 
 .servicios-titulo em {
   font-style: italic;
-  font-family: serif;
 }
 
 .servicios-descripcion {

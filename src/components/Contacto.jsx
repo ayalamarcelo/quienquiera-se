@@ -22,9 +22,11 @@ export default function Contacto() {
     e.preventDefault();
 
     const serviciosLegibles = {
-      'correccion-estilo': 'Corrección de Estilo',
-      'correccion-ortotipografica': 'Corrección Ortotipográfica',
-      'consultoria': 'Consultoría',
+      'tabitha-king': 'Informe de Lectura',
+      'vera-nabokova': 'Editing y corrección',
+      'anna-grigoryevna': 'Maquetación',
+      'olivia-langdon': 'Editing y corrección + Maquetación',
+      'sophia-tolstaya': 'Ghostwriting + Editing y corrección + Maquetación',
       'otro': 'Otro'
     };
 
@@ -42,7 +44,6 @@ export default function Contacto() {
     window.open(whatsappUrl, '_blank');
   };
 
-  // Variantes para animaciones en cascada
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -73,7 +74,7 @@ export default function Contacto() {
         <p className="contact-subtitle">Hablemos de tu proyecto</p>
         <h2>¿Tenés una idea en mente? Hagámosla <em>realidad</em>.</h2>
         <p className="contact-description">
-          Estamos listas para escucharte. Completa el formulario y envianos tu consulta.
+          Estamos listas para escucharte. Completá el formulario y envianos tu consulta.
         </p>
       </motion.header>
 
@@ -118,9 +119,11 @@ export default function Contacto() {
             required
           >
             <option value="" disabled>Selecciona una opción</option>
-            <option value="correccion-estilo">Corrección de Estilo</option>
-            <option value="correccion-ortotipografica">Corrección Ortotipográfica</option>
-            <option value="consultoria">Consultoría</option>
+            <option value="tabitha-king">Tabitha King (Informe de lectura)</option>
+            <option value="vera-nakova">Véra Nabókova (Editing y corrección)</option>
+            <option value="anna-grigoryevna">Anna Grigoryevna (Maquetación)</option>
+            <option value="olivia-langdon">Olivia Langdon (Editing y corrección + Maquetación)</option>
+            <option value="sophia-tolstaya">Sophia Tolstaya (Ghostwriting + Editing y corrección + Maquetación)</option>
             <option value="otro">Otro</option>
           </select>
         </motion.label>
