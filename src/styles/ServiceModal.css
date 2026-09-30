@@ -93,9 +93,10 @@
 
 .service-text-section h2 {
   font-size: 1.2rem;
+  font-style: italic;
   color: #222;
   margin-bottom: 0.75rem;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .service-text-section p {
