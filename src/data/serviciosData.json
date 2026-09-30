@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "titulo": "Tabitha King",
+    "subtitulo": "Informe de lectura",
+    "descripcion": "Este paquete está pensado para los autores que buscan una opinión profesional sobre su manuscrito y un análisis detallado sobre sus puntos fuertes y débiles.\n\nEl paquete “Tabitha King” consiste en la realización de un informe de lectura en profundidad en el cual se evaluarán: la estructura del texto, sus características, los elementos destacados y los puntos bajos del manuscrito, el desarrollo de ideas, el ritmo de lectura, el tipo de libro en el que se podría convertir, entre otros.\n\n<strong>¿Qué se necesita para realizar el trabajo?</strong>\nUn manuscrito de 50.000 caracteres con espacios que presente las partes más destacadas de la obra, seleccionado por el autor.\n\n<strong>¿Qué recibe el cliente?</strong>\nUn pdf completo con todas las revisiones necesarias sobre los contenidos del texto, la voz autoral, las particularidades de la historia, los puntos que deberían ser trabajados con más profundidad, y las posibilidades de realización editorial que permiten.",
+    "servicio": "",
+    "imagen": "./images/services/Tabitha-King.jpg",
+    "historia": "Tabitha King (1949) es una escritora estadounidense casada con Stephen King. Ella no solo lo acompañó y apoyó cuando él comenzaba su carrera como novelista, sino que también salvó las primeras páginas de Carrie –su primera novela publicada y actualmente un bestseller–, luego de que él las tirara a la basura. A lo largo de la carrera de Stephen, Tabitha no solo le dió el apoyo necesario para escribir sino que también ofreció una primera lectura crítica de sus historias..."
+  },
+  {
+    "id": 2,
+    "titulo": "Véra Nabókova",
+    "subtitulo": "Editing y corrección",
+    "descripcion": "",
+    "servicio": "",
+    "imagen": "./images/services/Vera-Nabokova.jpg",
+    "historia": "Historia o biografía de Véra Nabókova..."
+  },
+  {
+    "id": 3,
+    "titulo": "Sophia Tolstaya",
+    "subtitulo": "Ghostwriting + Editing y corrección + Maquetación",
+    "descripcion": "",
+    "servicio": "",
+    "imagen": "./images/services/Sophia-Tolstaya.jpg",
+    "historia": "Historia o biografía de Sophia Tolstaya..."
+  },
+  {
+    "id": 4,
+    "titulo": "Olivia Langdon",
+    "subtitulo": "Editing y corrección + Maquetación",
+    "descripcion": "",
+    "servicio": "",
+    "imagen": "./images/services/Olivia-Langdon.jpg",
+    "historia": "Historia o biografía de Olivia Langdon..."
+  },
+  {
+    "id": 5,
+    "titulo": "Anna Grigoryevna",
+    "subtitulo": "Maquetación",
+    "descripcion": "",
+    "servicio": "",
+    "imagen": "./images/services/Anna-Grigoryevna.jpg",
+    "historia": "Historia o biografía de Anna Grigoryevna..."
+  }
+]
