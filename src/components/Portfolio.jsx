@@ -1,61 +1,19 @@
 import React, { useState } from 'react';
-import Modal from '../components/Modal';
+import Modal from '../components/PortfolioModal';
 import '../styles/Portfolio.css';
+import projectsData from '../data/projectsData';
 
-const PROJECTS_DATA = [
-  {
-    id: 1,
-    title: "Edición integral: La Sombra del Viento",
-    category: "Proceso Editorial",
-    client: "Editorial Planeta",
-    excerpt: "Corrección ortotipográfica, maquetación e ilustración para la edición de coleccionista.",
-    date: "28 Ago, 2026",
-    // Mantenemos el arreglo de hasta 3 imágenes para que el Modal las use
-    images: [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
-    ],
-    isFeatured: true,
-  },
-  {
-    id: 2,
-    title: "Diseño y Maquetación de Novela Histórica",
-    category: "Proceso Editorial",
-    client: "Autor Independiente",
-    excerpt: "Preparación completa del archivo de texto, diseño de tripas y maquetación lista para imprenta.",
-    date: "20 Ago, 2026",
-    images: [
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
-    ],
-    isFeatured: false,
-  },
-  {
-    id: 3,
-    title: "Registro Legal y Gestión ISBN para Saga Fantástica",
-    category: "Aspectos Legales",
-    client: "Ediciones Letras",
-    excerpt: "Tramitación de ISBN, depósito legal y protección de derechos de autor para trilogía.",
-    date: "15 Ago, 2026",
-    images: [
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
-    ],
-    isFeatured: false,
-  }
-];
-
-const CATEGORIES = ["Todos", "Tabitha King", "Vera Nabokova", "Sophia Tolstaya", "Olivia Langdon", "Anna Grigoryevna"];
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
-  const [activeProject, setActiveProject] = useState(null); // Estado para el modal
-
-  const filteredProjects = PROJECTS_DATA.filter((project) => {
+  const [activeProject, setActiveProject] = useState(null);
+  const CATEGORIES = ["Todos", "Tabitha King", "Vera Nabokova", "Sophia Tolstaya", "Olivia Langdon", "Anna Grigoryevna"];
+  
+  const filteredProjects = projectsData.filter((project) => {
     return selectedCategory === "Todos" || project.category === selectedCategory;
   });
 
-  const featuredProject = PROJECTS_DATA.find((p) => p.isFeatured);
+  const featuredProject = projectsData.find((p) => p.isFeatured);
 
   return (
     <main className="editorial-portfolio">
@@ -63,7 +21,7 @@ export default function Portfolio() {
       <header className="portfolio-header">
         <h1>Nuestros <em>Proyectos</em></h1>
         <p className="portfolio-subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Algunos de nuestros trabajos y muestra de los servicios.
         </p>
       </header>
 

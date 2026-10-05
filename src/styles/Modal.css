@@ -115,6 +115,10 @@
   line-height: 1.6;
 }
 
+.modal-footer {
+  margin-top: 20px;
+}
+
 .card-link-btn {
   background: none;
   border: none;

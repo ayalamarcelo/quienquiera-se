@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Maquetación",
+    "category": "Anna Grigoryevna",
+    "client": "Prisma Geográfico",
+    "excerpt": "Para la publicación del primer número de la revista *Prisma Geográfico* recibimos los textos ya terminados y corregidos y nos abocamos a trabajar en la maqueta. Teniendo en cuenta la necesidad de nuestro cliente de producir la revista con mapas, epígrafes y diferentes jerarquías de texto, presentamos su revista con maqueta simple que organiza todos sus apartados.\n    En este caso, definimos que la elección de tipografías y colores se centre principalmente en la legibilidad (tipografía serif y colores contrastantes) debido al formato A5 en el que se planeó su impresión.",
+    "date": "28 Ago, 2026",
+    "images": [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": false
+  },
+  {
+    "id": 2,
+    "title": "Maquetación de Informe Final",
+    "category": "Anna Grigoryevna",
+    "client": "Independiente",
+    "excerpt": "En este caso realizamos únicamente la maqueta para la presentación del informe final de una alumna de Edición, basándonos en los manuales de la Escuela Técnica *Raggio* para lograr que el informe parezca parte de su catálogo (con fines académicos, sin comercialización).\n\nSi bien no se usaron imágenes para este trabajo en particular, la maqueta contaba con el índice, los distintos niveles de texto y también los inicios de capítulo.",
+    "date": "20 Ago, 2026",
+    "images": [
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isFeatured": false
+  }
+]
