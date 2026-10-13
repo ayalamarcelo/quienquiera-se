@@ -1,4 +1,3 @@
-/* Estilos para la ventana emergente (Modal) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -17,7 +16,7 @@
 .modal-container {
   background: var(--bg-card);
   border-radius: var(--radius-md);
-  max-width: 600px;
+  max-width: 800px; /* ⬅️ Ampliado de 600px a 800px para hacerlo más grande */
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -46,7 +45,7 @@
 /* Estructura del Carrusel del Modal */
 .modal-image-wrapper {
   width: 100%;
-  height: 260px;
+  height: 380px; /* ⬅️ Aumentado de 260px a 380px para que luzca más panorámico y acorde al nuevo tamaño */
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -67,7 +66,7 @@
 }
 
 .modal-image {
-  flex: 0 0 100%; /* Obliga a cada imagen a medir exactamente el 100% del ancho */
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -102,11 +101,11 @@
 }
 
 .modal-content {
-  padding: 1.5rem;
+  padding: 2rem; /* ⬅️ Ligeramente más espacioso (de 1.5rem a 2rem) por el nuevo ancho */
 }
 
 .modal-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem; /* ⬅️ Ajustado proporcionalmente (de 1.4rem a 1.6rem) */
   margin: 0.5rem 0;
 }
 

@@ -5,6 +5,19 @@ export default function Modal({ project, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!project) return;
+
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = 'unset';
+    };
+  }, [project]);
+
+
+  useEffect(() => {
     setCurrentIndex(0);
   }, [project]);
 
@@ -52,12 +65,11 @@ export default function Modal({ project, onClose }) {
                 <img 
                   key={index}
                   src={img} 
-                  alt={`${project.title} - imagen ${index + 1}`} 
+                  alt={`${project.title} imagen ${index + 1}`} 
                   className="modal-image" 
                 />
               ))}
             </div>
-
 
             {images.length > 1 && (
               <div className="carousel-dots">

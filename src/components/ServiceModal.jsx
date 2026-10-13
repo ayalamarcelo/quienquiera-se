@@ -4,8 +4,11 @@ import '../styles/ServiceModal.css';
 export default function ServiceModal({ service, onClose }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
     return () => {
       document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = 'unset';
     };
   }, []);
 
@@ -59,7 +62,10 @@ export default function ServiceModal({ service, onClose }) {
               <p
                 dangerouslySetInnerHTML={{
                   __html: service?.descripcion
-                    ? service.descripcion.replace(/\n/g, '<br />')
+                    ? service.descripcion
+                      .replace(/(¿[^?]+\?)/g, '<strong>$1</strong>')
+                      .replace(/(Adicionales:)/g, '<strong>$1</strong>')
+                      .replace(/\n/g, '<br />')
                     : ''
                 }}
               />
