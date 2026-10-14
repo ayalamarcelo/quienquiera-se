@@ -1,5 +1,6 @@
 #servicios {
-  background-color: #f1f5f03d;
+  background-color: #f8f9fa;
+  background-image: url('../assets/images/pattern.svg');
 }
 
 .servicios-container {
@@ -33,9 +34,9 @@
 }
 
 .servicios-descripcion {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  color: #555;
+  color: #363636;
   line-height: 1.6;
 }
 
@@ -120,11 +121,12 @@
   background: #fdfdfd;
   border: 1px solid #eaeaea;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.075);
+  transition: border-color 0.3s ease-in, box-shadow 0.3s ease-in;
 }
 
 .servicio-card-lineal:hover {
-  border-color: #ccc;
+  border-color: #1b1b1b;
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
 }
 
