@@ -3,12 +3,19 @@ import '../styles/ServiceModal.css';
 
 export default function ServiceModal({ service, onClose }) {
   useEffect(() => {
+    if (!service) return;
+
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    const originalBodyOverflow = document.body.style.overflow;
+
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = originalHtmlOverflow;
+      document.body.style.overflow = originalBodyOverflow;
     };
-  }, []);
+  }, [service]);
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -59,10 +66,10 @@ export default function ServiceModal({ service, onClose }) {
                 dangerouslySetInnerHTML={{
                   __html: service?.descripcion
                     ? service.descripcion
-                        .replace(/(¿[^?]+\?)/g, '<strong>$1</strong>')
-                        .replace(/(Adicionales:)/g, '<strong>$1</strong>')
-                        .replace(/(Maqueta simple:|Maqueta completa:)/g, '<strong>$1</strong>')
-                        .replace(/\n/g, '<br />')
+                      .replace(/(¿[^?]+\?)/g, '<strong>$1</strong>')
+                      .replace(/(Adicionales:)/g, '<strong>$1</strong>')
+                      .replace(/(Maqueta simple:|Maqueta completa:)/g, '<strong>$1</strong>')
+                      .replace(/\n/g, '<br />')
                     : ''
                 }}
               />

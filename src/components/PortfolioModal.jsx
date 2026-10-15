@@ -7,17 +7,22 @@ export default function Modal({ project, onClose }) {
   useEffect(() => {
     if (!project) return;
 
-    // Calculamos el ancho de la barra para evitar el salto de scroll
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+    
     if (scrollbarWidth > 0) {
       document.body.style.paddingRight = `${scrollbarWidth}px`;
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
-      document.body.style.paddingRight = '0px';
+      document.documentElement.style.overflow = originalHtmlOverflow;
+      document.body.style.overflow = originalBodyOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
     };
   }, [project]);
 
@@ -60,8 +65,8 @@ export default function Modal({ project, onClose }) {
         </button>
 
         <figure className="modal-image-wrapper">
-          <div className="modal-carousel">
-            <div
+          <section className="modal-carousel">
+            <section
               className="carousel-track"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
@@ -73,10 +78,10 @@ export default function Modal({ project, onClose }) {
                   className="modal-image"
                 />
               ))}
-            </div>
+            </section>
 
             {images.length > 1 && (
-              <div className="carousel-dots">
+              <nav className="carousel-dots">
                 {images.map((_, index) => (
                   <button
                     key={index}
@@ -86,9 +91,9 @@ export default function Modal({ project, onClose }) {
                     aria-label={`Ver imagen ${index + 1}`}
                   />
                 ))}
-              </div>
+              </nav>
             )}
-          </div>
+          </section>
         </figure>
 
         <section className="modal-content">
