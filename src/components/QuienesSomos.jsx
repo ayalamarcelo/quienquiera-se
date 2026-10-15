@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/QuienesSomos.css";
 
-import avatar1 from "../assets/images/avatar-img-1.svg";
-import avatar2 from "../assets/images/avatar-img-2.svg";
+import avatar1 from "../assets/images/nosotras/male.webp";
+import avatar2 from "../assets/images/nosotras/maru.webp";
 
 export default function QuienesSomos() {
   return (
@@ -47,6 +47,7 @@ export default function QuienesSomos() {
               <article className="team-card">
                 <figure className="team-card__figure">
                   <img
+                    draggable="false"
                     className="team-card__image"
                     src={avatar1}
                     alt="Malena Cabrera"
@@ -86,6 +87,7 @@ export default function QuienesSomos() {
               <article className="team-card">
                 <figure className="team-card__figure">
                   <img
+                    draggable="false"
                     className="team-card__image"
                     src={avatar2}
                     alt="María Ferenaz"

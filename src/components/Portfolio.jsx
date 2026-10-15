@@ -8,7 +8,7 @@ export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [activeProject, setActiveProject] = useState(null);
   const CATEGORIES = ["Todos", "Tabitha King", "Vera Nabokova", "Sophia Tolstaya", "Olivia Langdon", "Anna Grigoryevna"];
-  
+
   const filteredProjects = projectsData.filter((project) => {
     return selectedCategory === "Todos" || project.category === selectedCategory;
   });
@@ -28,9 +28,9 @@ export default function Portfolio() {
       {featuredProject && (
         <article className="featured-card">
           <figure className="card-image-wrapper">
-            <img 
-              src={featuredProject.images[0]} 
-              alt={featuredProject.title} 
+            <img
+              src={featuredProject.images[0]}
+              alt={featuredProject.title}
               className="card-image"
             />
           </figure>
@@ -43,8 +43,8 @@ export default function Portfolio() {
             <p className="featured-excerpt">{featuredProject.excerpt}</p>
             <footer className="featured-footer">
               <time className="post-date">{featuredProject.date}</time>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="read-more-btn"
                 onClick={() => setActiveProject(featuredProject)}
               >
@@ -77,9 +77,9 @@ export default function Portfolio() {
           filteredProjects.map((project) => (
             <article key={project.id} className="post-card">
               <figure className="card-image-wrapper">
-                <img 
-                  src={project.images[0]} 
-                  alt={project.title} 
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
                   className="card-image"
                   loading="lazy"
                 />
@@ -90,11 +90,18 @@ export default function Portfolio() {
                   <address className="client-tag">{project.client}</address>
                 </header>
                 <h3 className="post-card-title">{project.title}</h3>
-                <p className="post-card-excerpt">{project.excerpt}</p>
+
+                <p
+                  className="post-card-excerpt"
+                  dangerouslySetInnerHTML={{
+                    __html: project.excerpt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                  }}
+                />
+
                 <footer className="post-card-footer">
                   <time className="post-date">{project.date}</time>
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="card-link-btn"
                     onClick={() => setActiveProject(project)}
                   >
@@ -110,9 +117,9 @@ export default function Portfolio() {
       </section>
 
       {/* Ventana emergente (Modal) con el carrusel */}
-      <Modal 
-        project={activeProject} 
-        onClose={() => setActiveProject(null)} 
+      <Modal
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
       />
 
     </main>

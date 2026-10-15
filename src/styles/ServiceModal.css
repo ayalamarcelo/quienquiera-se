@@ -103,6 +103,7 @@
   color: #555;
   line-height: 1.6;
   font-size: 0.95rem;
+  white-space: pre-line;
 }
 
 .service-explanation-sidebar {
@@ -123,6 +124,16 @@
   color: #666;
   line-height: 1.5;
   font-size: 0.9rem;
+}
+
+ul, ol {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 24px;
+}
+
+li {
+  margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {

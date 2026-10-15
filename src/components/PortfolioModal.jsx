@@ -46,9 +46,9 @@ export default function Modal({ project, onClose }) {
   return (
     <dialog className="modal-overlay" open onClick={onClose}>
       <article className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <button 
-          type="button" 
-          className="modal-close-btn" 
+        <button
+          type="button"
+          className="modal-close-btn"
           onClick={onClose}
           aria-label="Cerrar ventana"
         >
@@ -57,16 +57,16 @@ export default function Modal({ project, onClose }) {
 
         <figure className="modal-image-wrapper">
           <div className="modal-carousel">
-            <div 
-              className="carousel-track" 
+            <div
+              className="carousel-track"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {images.map((img, index) => (
-                <img 
+                <img
                   key={index}
-                  src={img} 
-                  alt={`${project.title} imagen ${index + 1}`} 
-                  className="modal-image" 
+                  src={img}
+                  alt={`${project.title} imagen ${index + 1}`}
+                  className="modal-image"
                 />
               ))}
             </div>
@@ -94,7 +94,12 @@ export default function Modal({ project, onClose }) {
           </header>
 
           <h2 className="modal-title">{project.title}</h2>
-          <p className="modal-excerpt">{project.excerpt}</p>
+          <p
+            className="modal-excerpt"
+            dangerouslySetInnerHTML={{
+              __html: project.excerpt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            }}
+          />
 
           <footer className="modal-footer">
             <time className="post-date">Publicado: {project.date}</time>

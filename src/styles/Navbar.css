@@ -35,6 +35,8 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 /* Menú Desktop */

@@ -31,6 +31,7 @@ export default function Navbar() {
         
         <a href="#home" className="navbar-logo">
           <img 
+            draggable="false"
             className="logo-qq"
             src={Logo}
             alt="logo-qq" 

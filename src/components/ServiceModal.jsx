@@ -65,6 +65,7 @@ export default function ServiceModal({ service, onClose }) {
                     ? service.descripcion
                       .replace(/(¿[^?]+\?)/g, '<strong>$1</strong>')
                       .replace(/(Adicionales:)/g, '<strong>$1</strong>')
+                      .replace(/(Maqueta simple:|Maqueta completa:)/g, '<strong>$1</strong>')
                       .replace(/\n/g, '<br />')
                     : ''
                 }}

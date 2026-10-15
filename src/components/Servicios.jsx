@@ -43,7 +43,7 @@ export default function Servicios() {
                     {servicio.titulo}
                   </h2>
                   <p className="servicio-card-descripcion">
-                    {servicio.servicio}
+                    {servicio.descripcion}
                   </p>
                 </div>
 
