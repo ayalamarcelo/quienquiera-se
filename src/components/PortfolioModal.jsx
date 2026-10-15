@@ -7,15 +7,19 @@ export default function Modal({ project, onClose }) {
   useEffect(() => {
     if (!project) return;
 
+    // Calculamos el ancho de la barra para evitar el salto de scroll
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    
     document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
 
     return () => {
       document.body.style.overflow = 'unset';
-      document.documentElement.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
     };
   }, [project]);
-
 
   useEffect(() => {
     setCurrentIndex(0);

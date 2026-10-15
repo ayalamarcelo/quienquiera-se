@@ -4,11 +4,9 @@ import '../styles/ServiceModal.css';
 export default function ServiceModal({ service, onClose }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
 
     return () => {
       document.body.style.overflow = 'unset';
-      document.documentElement.style.overflow = 'unset';
     };
   }, []);
 
@@ -34,7 +32,6 @@ export default function ServiceModal({ service, onClose }) {
         className="service-detail-container"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Banner superior independiente sin padding lateral */}
         <div className="service-banner-wrapper">
           <figure className="service-figure">
             <img
@@ -46,7 +43,6 @@ export default function ServiceModal({ service, onClose }) {
           </figure>
         </div>
 
-        {/* Cuerpo del modal que contiene el padding para el texto y la sidebar */}
         <div className="service-body-content">
           <header className="service-header">
             <h1 className="service-title">
@@ -63,10 +59,10 @@ export default function ServiceModal({ service, onClose }) {
                 dangerouslySetInnerHTML={{
                   __html: service?.descripcion
                     ? service.descripcion
-                      .replace(/(¿[^?]+\?)/g, '<strong>$1</strong>')
-                      .replace(/(Adicionales:)/g, '<strong>$1</strong>')
-                      .replace(/(Maqueta simple:|Maqueta completa:)/g, '<strong>$1</strong>')
-                      .replace(/\n/g, '<br />')
+                        .replace(/(¿[^?]+\?)/g, '<strong>$1</strong>')
+                        .replace(/(Adicionales:)/g, '<strong>$1</strong>')
+                        .replace(/(Maqueta simple:|Maqueta completa:)/g, '<strong>$1</strong>')
+                        .replace(/\n/g, '<br />')
                     : ''
                 }}
               />
