@@ -99,7 +99,7 @@ export default function Portfolio() {
                 />
 
                 <footer className="post-card-footer">
-                  <time className="post-date">{project.date}</time>
+                  {/* <time className="post-date">{project.date}</time> */}
                   <button
                     type="button"
                     className="card-link-btn"

@@ -111,7 +111,7 @@ export default function Modal({ project, onClose }) {
           />
 
           <footer className="modal-footer">
-            <time className="post-date">Publicado: {project.date}</time>
+            {/* <time className="post-date">Publicado: {project.date}</time> */}
           </footer>
         </section>
       </article>
