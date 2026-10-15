@@ -116,7 +116,9 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .team-card__image {
@@ -135,6 +137,10 @@
 
 .team-card__caption {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .team-card__name {
